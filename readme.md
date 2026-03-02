@@ -7,11 +7,20 @@ A web crawler + search engine you run locally. Crawl any website, index its cont
 ```bash
 mkdir ~/nexus/
 cd ~/nexus
+
+# Clone repo directly into current folder
 git clone --depth 1 https://github.com/CyberHuman-bot/NEXUS-search.git .
-python -m venv nexus
+
+# Create & activate virtual environment
+python3 -m venv nexus
 source nexus/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
-nohup python app.py &
+
+# Start server in background
+nohup python3 app.py &
+
 ```
 
 Then open **http://localhost:5000** in your browser.
@@ -54,3 +63,7 @@ Seed URL → crawler.py → fetches page → extracts text/links
 - Set `stay_on_domain=False` to follow all links (careful — can be huge)
 - `max_pages` limits how many pages per crawl (default: 30)
 - The index is persistent — crawl multiple sites and they all merge
+
+### Note for Windows users
+On Windows, replace `source nexus/bin/activate` with:
+`.\nexus\Scripts\activate`
