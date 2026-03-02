@@ -11,7 +11,7 @@ git clone --depth 1 https://github.com/CyberHuman-bot/NEXUS-search.git .
 python -m venv nexus
 source nexus/bin/activate
 pip install -r requirements.txt
-python app.py &
+nohup python app.py &
 ```
 
 Then open **http://localhost:5000** in your browser.
